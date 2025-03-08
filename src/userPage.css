@@ -1,0 +1,42 @@
+.main-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffe6e6;
+    min-height: 100vh;
+}
+
+.headLine {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.chapter-list {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    max-width: 600px;
+    padding: 0;
+    overflow-y: auto;  
+    max-height: 70vh; 
+}
+
+.chapter-item {
+    background-color: #ffb6c1;
+    padding: 12px;
+    margin: 6px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    list-style-type: none;
+}
+
+.chapter-item:hover {
+    background-color: #ff94a2;
+}
