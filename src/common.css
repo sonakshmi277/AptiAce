@@ -43,6 +43,7 @@
 }
 .admin-main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -113,14 +114,25 @@
     transition: 0.3s ease-in-out;
     font-size: 16px;
 }
-
+.submitt{
+    margin-top: 20px;
+    padding: 12px;
+}
+.bt1{
+    background-color: purple;
+    color:white;
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 4vw;
+}
 .submit-btn:hover {
     background-color: #e07542;
     transform: scale(1.05);
 }
 
 .chapter-container {
-    max-width: 700px;
+    max-width: 900px;
     margin: auto;
     padding: 20px;
     background-color: white;

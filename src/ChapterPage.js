@@ -44,7 +44,7 @@ export default function ChapterPage() {
             <div className="question-list">
                 {questions.map((question, qIndex) => (
                     <div key={qIndex} className="question-item">
-                        <p><b>Q{qIndex + 1}:</b> {question.questionName}</p>
+                        <b><p>Q{qIndex + 1}: {question.questionName}</p></b>
 
                         <div className="options">
                             {question.options.map((option, optionIndex) => {

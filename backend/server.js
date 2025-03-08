@@ -27,7 +27,7 @@ app.post('/chaptt', async (req, res) => {
             { new: true, upsert: true }  
         );
         console.log("Updated Chapter:", updatedChapter);
-        res.json({ message: "Questions added successfully.", updatedChapter });
+       return  res.json({ message: "Questions added successfully.", updatedChapter });
 
     } catch (err) {
         console.error("Error saving to DB:", err);

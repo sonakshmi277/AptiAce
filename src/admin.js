@@ -31,6 +31,7 @@ export default function Admin() {
 
     return (
         <div className="admin-main">
+            <h1>Add new question</h1>
             <div className="admin-main2">
                 <div className="chap">
                     <input 
@@ -70,8 +71,8 @@ export default function Admin() {
 
                
             </div>
-            <div className="submit">
-                <button onClick={goToSubmit}>Submit</button>
+            <div className="submitt">
+                <button onClick={goToSubmit} className="bt1">Submit</button>
             </div>
         </div>
     );
