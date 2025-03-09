@@ -132,13 +132,15 @@
 }
 
 .chapter-container {
-    max-width: 900px;
+    width: 900px;
+    height:900px;
     margin: auto;
     padding: 20px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+    
 }
 
 .back-btn {
@@ -159,7 +161,7 @@
 
 .question-list {
     margin-top: 20px;
-    max-height: 400px;
+    height: 75vh;
     overflow-y: auto;
     padding-right: 10px;
 }
