@@ -3,7 +3,7 @@ This is a web-based aptitude preparation platform designed to help users practic
 
  ### Features
    #### Chapter-wise MCQs – Questions categorized based on different aptitude topics.
-   #### Admin Panel – Allows easy addition and management of questions.
+   #### Admin Panel – Allows easy addition of questions.
    #### User-Friendly Interface – Simple and intuitive UI for seamless learning.
 
 ## Tech Stack : MERN
