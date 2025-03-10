@@ -8,6 +8,8 @@ export default function ChapterPage() {
     const navigate = useNavigate();
     const [questions, setQuestions] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState({});
+    const [timeTaken, setTimeTaken] = useState({}); 
+    const [currentTimer, setCurrentTimer] = useState(0);
     const [showResults, setShowResults] = useState(false);
 
     useEffect(() => {
@@ -24,12 +26,23 @@ export default function ChapterPage() {
 
         fetchQuestions();
     }, [chapterName]);
+    useEffect(() => {
+        let timer = setInterval(() => {
+            setCurrentTimer(prev => prev + 1);
+        }, 1000);
 
+        return () => clearInterval(timer); 
+    }, [questions]); 
     const handleOptionSelect = (qIndex, optionIndex) => {
         setSelectedOptions(prev => ({
             ...prev,
             [qIndex]: optionIndex
         }));
+        setTimeTaken(prev => ({
+            ...prev,
+            [qIndex]: currentTimer
+        }));
+        setCurrentTimer(0);
     };
 
     const handleSubmit = () => {
@@ -40,10 +53,14 @@ export default function ChapterPage() {
         <div className="chapter-container">
             <button className="back-btn" onClick={() => navigate("/userpg")}>← Back to Chapters</button>
             <h1 className="chapter-title">Questions for Chapter {chapterName}</h1>
-            
+
             <div className="question-list">
                 {questions.map((question, qIndex) => (
                     <div key={qIndex} className="question-item">
+                        <div className="timer">
+                            ⏳ Time Spent: {timeTaken[qIndex] || currentTimer} sec
+                        </div>
+
                         <b><p>Q{qIndex + 1}: {question.questionName}</p></b>
 
                         <div className="options">
@@ -69,6 +86,12 @@ export default function ChapterPage() {
                                 );
                             })}
                         </div>
+
+                        {showResults && (
+                            <p className="time-result">
+                                ⏱️ Time Taken: {timeTaken[qIndex] || 0} sec
+                            </p>
+                        )}
                     </div>
                 ))}
             </div>
