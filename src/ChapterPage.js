@@ -87,11 +87,7 @@ export default function ChapterPage() {
                             })}
                         </div>
 
-                        {showResults && (
-                            <p className="time-result">
-                                ⏱️ Time Taken: {timeTaken[qIndex] || 0} sec
-                            </p>
-                        )}
+                        
                     </div>
                 ))}
             </div>
